@@ -1,0 +1,112 @@
+body {
+    text-align: center;
+    background-color: lightcyan;
+}
+
+/* element selector  */
+p {
+    color : red;
+}
+
+/* id selector  */
+
+#heading {
+    color : grey;
+
+}
+
+#heading2 {
+    color: red;
+}
+/* class selectors  */
+.head {
+    color : teal;
+    
+}
+
+.head2 {
+    color: aqua;
+}
+
+/* group selector  */
+/* 
+h1, p {
+    color:lavender;
+} */
+
+
+/*  css combinators  */
+
+div  ~ p {
+background-color: lightblue;
+}
+
+img {
+    border-radius: 50%;
+    border: 1px solid red;
+}
+
+/* #myVideo{
+    position: fixed;
+    max-width: 100%;
+    max-height: 100%;
+} */
+
+/* div  + p {
+    background-color: lightblue;
+    } */
+
+.viral {
+    border: 1px solid grey;
+   
+}
+
+.list{
+    list-style: none;
+    text-align: justify;
+}
+
+.item1{
+    grid-area: header;  
+    border: 1px solid lightgrey;
+}
+.item2{
+    grid-area: menu;  
+    border: 1px solid lightgrey;
+}
+.item3{
+    grid-area: main;  
+    border: 1px solid lightgrey;
+}
+.item4{
+    grid-area: right; 
+    border: 1px solid lightgrey; 
+}
+.item5{
+    grid-area: footer;  
+    border: 1px solid lightgrey;
+}
+
+.grid-container{
+    display: grid;
+    grid-template-areas: 
+    'header header header header header header'
+    'menu main main main right right'
+    'footer footer footer footer footer footer';
+    grid-gap: 10px;
+    background-color: lavender;
+    padding: 10px;
+    border: 1px solid lightgrey;
+}
+
+@media screen and (min-width: 400px) {
+    body {
+        background-color: black;
+    }
+}
+
+@media screen and (min-width: 600px) {
+    body {
+        background-color: green;
+    }
+}
