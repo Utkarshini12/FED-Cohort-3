@@ -1,0 +1,31 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+
+body{
+    font-family: "Poppins", sans-serif;
+    color: #fff;
+}
+
+.parallax-one {
+    background: url('https://images.pexels.com/photos/2609107/pexels-photo-2609107.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940') repeat fixed 100%;
+    background-size: cover;
+}
+
+.parallax-two {
+    background: url('https://images.pexels.com/photos/4275885/pexels-photo-4275885.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940') repeat fixed 100%;
+    background-size: cover;
+}
+
+.parallax-three {
+    background: url('https://images.pexels.com/photos/4275885/pexels-photo-4275885.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940') repeat fixed 100%;
+    background-size: cover;
+}
+
+.parallax-inner {
+    font-size: 128px;
+
+}
+
+.section-text{
+    font-size: 16px;
+    margin: 50px;
+}

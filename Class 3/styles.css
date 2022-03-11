@@ -1,0 +1,12 @@
+/* .btn{
+    padding: 15px;
+    border-radius: 10%;
+    color: white;
+    background-color: #7952b3;
+} */
+
+.size{
+    width: 300px;
+    height: 300px;
+    border: 1px solid aqua;
+}
