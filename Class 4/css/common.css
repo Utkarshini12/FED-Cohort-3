@@ -1,0 +1,14 @@
+.header {
+    border: 1px solid grey;
+}
+.end{
+    display: flex;
+    justify-content: end;
+    align-items: end;
+}
+
+.heading {
+    margin: 10px;
+    padding: 10px;
+    color:blue
+}
