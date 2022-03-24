@@ -105,6 +105,7 @@ function addItem(e) {
     console.log(li);
     // append li to list 
     itemList.appendChild(li);
+    
 
 }
 
@@ -130,11 +131,26 @@ function filterItems(e) {
     // store the list text nodes in an array 
     // loop through the array 
     // find the value equal to the value inside the array 
+// do not get a match 
     // item.style.display = 'none'
+    // get a amatch
     // item.style.display = 'block'
-
-
-
+ // convert text to lowercase
+    var text = e.target.value.toLowerCase();
+    // Get list
+    var items = itemList.getElementsByTagName('li');
+    // Convert to an array
+    Array.from(items).forEach(function (item) {
+        var itemName = item.firstChild.textContent;
+        if (itemName.toLowerCase().indexOf(text) != -1) {
+            item.style.display = 'block';
+        } else {
+            item.style.display = 'none';
+        }
+    });
 }
+
+
+
 
 
