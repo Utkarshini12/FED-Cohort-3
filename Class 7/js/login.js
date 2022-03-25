@@ -65,8 +65,34 @@ function loginFn() {
     } else if (loginPassword.value == "") {
         updateAuthErrorMsg("Password should not be empty");;
     } else {
-        // allow the use to login 
-        // api call
+		const data = {
+			username: loginUsername.value,
+			password: loginPassword.value
+		}
+		fetch(BASE_URL + '/api/v1/user/login', {
+			method: 'POST', // put 
+			headers: {
+				'Content-Type': 'application/json'
+			},
+			body: JSON.stringify(data)
+		}).then(response => response.json())
+		.then(data => {
+			console.log('Success: ', data);
+			if(data.success) {
+				localStorage.setItem("username", data.data.username)
+				localStorage.setItem("userId", data.data.userId)
+				localStorage.setItem("token", data.data.token)
+				window.location.href = "index.html"
+			}else {
+				updateAuthErrorMsg(data.msg)
+			}
+		})
+		.catch((error) => {
+			console.error("Error", error)
+		})
+
+
+        
     }
 
 }
