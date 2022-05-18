@@ -1,19 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import store from './store/store';
+import { Provider } from 'react-redux';
+import Calender from './component/calender/Calender';
+import "./App.css"
 
-function Welcome(props) {
-  return (
-    <div className="App">
-      <div>Hello, {props.name} </div>
-    </div>
-  );
-}
 
-export default App;
+
+
 
 
 function App(){
   return (
-    <Welcome name="Utkarshini"
+    <Provider store={store}>
+   <Calender />
+   </Provider>
   )
 }
+
+export default App;
