@@ -1,25 +1,30 @@
 import {Link} from 'react-router-dom'
 import Header from '../components/Header'
-
-// function Home() {
-//     return(
-
-//     )
-// }
-// const Home = () => {
-//     return(
-
-//     )
-// }
-// () => {
-//     return()
-// }
-// () => ()
+import {useState, useEffect} from 'react';
+import {getAllCategories} from '../api/category'
 
 
 function Home() {
 
-    let data=['Electronics', 'Appliances', 'Fashion', 'Household'];
+   const [categories, setCategories] = useState();
+
+   const init = async () => {
+       const result = await getAllCategories();
+       setCategories(result.data);
+       console.log(result.data);
+   }
+
+   console.log(categories);
+
+   useEffect(()=> {
+       init()
+   }, [])
+
+
+   
+   
+
+    
     return(
         <div >
           <Header />
@@ -28,14 +33,17 @@ function Home() {
             <button className="btn btn-info">Show all Products</button>
             </Link>
 <div className="row">
-            {data.map((item, i)=> (
+            {categories.map((category)=> (
+              
                 <div className="col">
-                    <div className="card bg-dark text-white" key={i}>
-                    <Link to="/products">
-                        <div className="p-5 text-decoration-none">{item}</div>
-                    </Link>
-                </div>
-                </div>
+                      {console.log(category.id)}
+                <div className="card bg-dark text-white" key={category.id}>
+                <Link to="/products">
+                    <div className="p-5 text-decoration-none">{category.name}</div>
+                </Link>
+            </div>
+            </div>
+                
                 
             ))}
             </div>
